@@ -10,6 +10,8 @@ my_values=[3.4,'pyhton',34,True, 'i love u!', 34, 'python']
 # i=my_values.clear()
 # print(i)
 
+
+
 '''
 print(my_values)
 my_values.append(34)
