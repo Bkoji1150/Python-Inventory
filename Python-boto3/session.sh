@@ -1,16 +1,5 @@
 
 
-# [root]
-# aws_access_key_id = AKIAJRCMPX5GEZQLWWTA
-# aws_secret_access_key = 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
-# [ec2_developer]
-# aws_access_key_id = AKIA5XNJJZL57MQ4WGWM
-# aws_secret_access_key = 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
-# [s3_developer]
-# aws_access_key_id = AKIA5XNJJZL5QC3Q7IUX
-# aws_secret_access_key = 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
-# ====================================================================
-# Custom Session:
 
 import boto3
 
