@@ -18,11 +18,4 @@ ec2=aws_con_re.instances.all()
 for i in ec2:
     print(i.id, i.state["Name"])
     # if i.state["Name"]=="stopped":
-    #     i.start()    
-
-    [default]
-aws_access_key_id = AKIA2WW3EQ4565CAK4EF
-aws_secret_access_key = 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
-[koji-devops]
-aws_access_key_id = AKIA2WW3EQ453RC5ZOMU
-aws_secret_access_key = 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   
+    #     i.start()
