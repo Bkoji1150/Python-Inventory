@@ -12,7 +12,7 @@ import pprint
 
 import boto3
 
-aws_con_re=boto3..resource(service_name='ec2',region_name="us-west-2")
+aws_con_re=boto3.resource(service_name='ec2',region_name="us-west-2")
 ec2=aws_con_re.instances.all()
 
 for i in ec2:
