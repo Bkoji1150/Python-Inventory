@@ -1,12 +1,12 @@
-# #####
-#
-# import os
-# import string
-# import platform
-#
-# for r,d,f in os.walk("/"):
-#     for each_file in f:
-#         print(r,os.walk)
+#####
+
+import os as bello
+import string
+import platform
+
+for r,d,f in os.walk("/"):
+    for each_file in f:
+        print(r,os.walk)
 
 
 # python.py

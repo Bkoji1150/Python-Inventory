@@ -1,6 +1,5 @@
 # Python second modules
 import firstmodule
-not
 print(firstmodule.num)
 import os
 
