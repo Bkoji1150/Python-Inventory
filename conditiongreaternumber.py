@@ -33,7 +33,6 @@ elif num==10:
 else:
     print(f"{num} is out of range, please select between 1-10")
 """
-'''
 
 num=eval(input("Enter Your number: "))
 if num in [1,2,3,4,5,6,7,8,9,10]:
@@ -59,7 +58,8 @@ if num in [1,2,3,4,5,6,7,8,9,10]:
         print("ten")
 else:
     print(f"{num} is out of range, please select between 1-10")
-'''
+
+''' 
 ## Making use of Dictionary ....
 
 num=eval(input("Enter Your number between 1-10 range: "))
