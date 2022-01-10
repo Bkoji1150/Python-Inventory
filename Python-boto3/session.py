@@ -1,6 +1,6 @@
 #
 # aws configure --profile "koji-devops"
-====================================================
+# ====================================================
 # Custom Session:
 #
 # import boto3
@@ -48,7 +48,7 @@ for each_iteams in response['Users']:
     print(each_iteams['UserName'])
 '''
 
-### List all ec2 display_details
+# List all ec2 display_details
 
 '''
 response=ec2_con_client.describe_instances()
@@ -59,7 +59,7 @@ for each in response['Reservations']:
     print('==================================')
 '''
 
-### List s3 bucket
+# List s3 bucket
 
 # list_of_buckets=[]
 #
@@ -72,12 +72,10 @@ for each in response['Reservations']:
 #     print(bucket_names)
 
 
-    # list_of_buckets= bucket_names
-    # for i in response_of_objects['Contents']:
-    #     print(f"The contects of bucket {list_of_buckets} are ---->", i['Key'])
-    #
-
-
+# list_of_buckets= bucket_names
+# for i in response_of_objects['Contents']:
+#     print(f"The contects of bucket {list_of_buckets} are ---->", i['Key'])
+#
 
 bucket3='hap23bdv-bucket'
 

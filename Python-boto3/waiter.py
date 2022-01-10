@@ -21,16 +21,11 @@ waiter=ec2_mag_cli.get_waiter('instance_stopped')
 waiter.wait(InstanceIds=['i-08e2d85419cb5a8c4'])
 print("Instance Stopped")
 
-
-
 object_of_console=aws_con_rel.Instance('i-08e2d85419cb5a8c4')
 print("Starting given instance..............")
 object_of_console.start()
 object_of_console.wait_until_running()
 print("Your instance is in running state!")
-
-
-
 
 
 while True:

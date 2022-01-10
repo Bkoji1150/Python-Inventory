@@ -1,29 +1,31 @@
-'''
-Errors are two types:
-      systax errors : --------->  no way to handle sysntax errors
-      Runtime exceptions ----->   exceptions errors
-'''
-# print("Hello My name is Koji")
-# print('Now it my time to Shine')
-#
-# try:
-#     print(4/0)
-# except:
-#     print("Zero division erros")
-'''
+import boto3
+aws_mag_con = boto3.session.Session()
+
+
+def main():
+    # iam list users function
+    iam_con = aws_mag_con.resource('iam')
+    try:
+        for each_user in iam_con.users.all():
+            print(each_user.name)
+        s3_buckets()
+    except Exception as e:
+        print(e)
+    return None
+
+
+def s3_buckets():
+    s3 = aws_mag_con.resource('s3')
+    # List s3 buckets function
+    try:
+        for each_buckets in s3.buckets.all():
+            print(f"These are the list of s3:",each_buckets.name)
+    except Exception as e:
+        print(e)
+
+
 try:
-    fo=open("naro.txt" 'r')
-    print(fo,read())
-    fo.close()
-except:
-    print("Please provide a valit file")
-'''
-try:
-    print(a)
-except Exception as e: # NameError, TypeError, Exception
+    if __name__=='__main__':
+        main()
+except Exception as e:
     print(e)
-
-#   Name error
-
-try:
-    print

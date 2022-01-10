@@ -1,8 +1,5 @@
 
-
-
 import boto3
-
 
 # aws_mag_con=boto3.session.Session()
 

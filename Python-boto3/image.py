@@ -1,4 +1,7 @@
 import boto3, botocore
+
+
+
 session=boto3.session.Session()
 client= session.client(service_name="ec2", region_name="us-west-2")
 
