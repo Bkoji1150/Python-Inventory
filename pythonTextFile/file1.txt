@@ -1,0 +1,40 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+  - name: Create rds Postgres
+    rds_instance:
+      maintenance_window: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ maintenance_window }}', region='us-west-2') }}"    # /{{ region }}' ) }}"
+      vpc_security_group_ids: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ vpc_security_group_ids }}', region='us-west-2') }}"
+      engine: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ engine_type }}', region='us-west-2') }}"
+      instance_class: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ instance_class }}', region='us-west-2') }}"
+      region: "us-west-2"
+      db_subnet_group_name: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ db_subnet_group_name }}', region='us-west-2') }}"
+      allocated_storage: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ allocated_storage }}', region='us-west-2') }}"
+      instance_role: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ instance_role }}', region='us-west-2') }}"
+      password: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ password }}', region='us-west-2') }}"
+      dbname: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ name }}', region='us-west-2') }}"
+      identifier: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ identifier }}', region='us-west-2') }}"
+      skip_db_snapshot: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ skip_db_snapshot }}', region='us-west-2') }}"
+      username: "{{ lookup('aws_ssm', '/Project-omega/{{ team }}/{{ username }}', region='us-west-2') }}"
+      
+      name: "{{ instance_name }}"
+      tags:
+        created_by: "{{ created_by }}"
+        Owner: "{{ Owner }}"
+        App_Name: "{{ App_Name }}"
+        Cost_Center: "{{ Cost_Center }}"
+        Business_Unit: "{{ Business_Unit }}"
+      user_data: |
+        #!/bin/bash
+        yum update -y
+        yum install httpd -y
+        service httpd start
+        chkconfig httpd on
+        echo "<html><body><h1>Hello Project-omega Team</h1></body></html>" > /var/www/html/index.html
+#  - debug:
+#      msg: rds_instance
+#  - debug:
+#      msg: "{{ allocated_storage.results[0].instance_ids }}"

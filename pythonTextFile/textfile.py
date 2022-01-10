@@ -21,17 +21,36 @@ fo.close()
 #
 # for each in range(3):
 #     print(data[each])
+try:
+    source_file = ''
+    _f = 'reading_file.py'
+    my_content = ["This is first line", 'This is the second line', 'This is the third line']
+    dfile='file1'
 
-source_file=input("Please enter your source file: ")
-dfile='newdemo.txt'
+    # sfo=open(source_file,'r')
+    df = open(dfile, 'w')
+    ''' 
+    df.write('This is the first name\n')
+    df.write("I'm coming home")
+    print(dir(df))
+    '''
+    for i in my_content:
+        df.writelines(i+"\n")
+    # content=sfo.read()
+    # print(sfo.readable())
+    df.close()
+    # sfo.close()
+    my_content = ["This is first line", 'This is the second line', 'This is the third line']
+    fo = open(_f, 'a')
+    for each in my_content:
+        fo.write(each + '\n')
+    fo.close()
+except Exception as e:
+    print(e)
 
-sfo=open(source_file,'r')
-content=sfo.read()
-sfo.close()
-
-dfo=open(dfile,'w')
-dfo.write(content)
-dfo.close()
+# dfo=open(dfile,'w')
+# dfo.write(content)
+# dfo.close()
 
 
 # print(content.txt,'w')

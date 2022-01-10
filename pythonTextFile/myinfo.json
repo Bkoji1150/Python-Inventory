@@ -1,0 +1,15 @@
+{
+    "Name": {
+        "First_Name": "Bello",
+        "last_Name": "Koji",
+        "Middle_Name": ""
+    },
+    "skills": [
+        "Python",
+        "Devops",
+        "Terraform",
+        "yaml",
+        "AWS"
+    ],
+    "Age": 26
+}

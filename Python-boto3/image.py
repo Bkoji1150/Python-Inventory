@@ -20,7 +20,7 @@ print(f"The image ids are: {instance_list}\nThe instance types are: {instance_id
 # try:
 #     response = client.create_image(
 #         InstanceId=instance_id[0],
-#         Name='test'
+#         Name='test.py'
 #     )
 # except Exception as e:
 #     print(e)
